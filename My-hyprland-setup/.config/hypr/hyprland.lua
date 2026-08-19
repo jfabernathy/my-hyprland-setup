@@ -44,6 +44,12 @@ local browser     = "firefox"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function ()
+   -- Export variables to systemd
+   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+
+   -- Restart portals so they catch the environment
+   hl.exec_cmd("systemctl --user stop xdg-desktop-portal xdg-desktop-portal-hyprland")
+   hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland xdg-desktop-portal")
    hl.exec_cmd("waybar")
    hl.exec_cmd("hyprpaper")
    hl.exec_cmd("/usr/libexec/hyprpolkitagent")
@@ -64,6 +70,8 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 -- Using string concatenation to append the Flatpak paths to the existing variable
 local current_xdg = os.getenv("XDG_DATA_DIRS") or "/usr/local/share:/usr/share"
 local flatpak_paths = "/var/lib/flatpak/exports/share:/home/jim/.local/share/flatpak/exports/share"
+
+
 
 -- Overwrite or set the environment variable for the current process/child processes
 os.execute("export XDG_DATA_DIRS=" .. current_xdg .. ":" .. flatpak_paths)
