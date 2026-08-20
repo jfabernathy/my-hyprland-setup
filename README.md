@@ -10,6 +10,6 @@ https://github.com/LinuxBeginnings/Debian-Hyprland
 
 I just installed the minimum without dotfiles and then used this repo's dotfiles. 
 
-At the time I first tested Debian-Hyprland, I noticed that their config was not using the .lua format yet and something in those dotfiles was causing me issue on KVM/QEMU Libvirt virt-manager preventing the mouse hover at the top of the Guest VM's output window from showing the exit full-screen mode buttons.
+At the time I first tested Debian-Hyprland, I noticed that their config was not using the .lua format yet and something in those dotfiles was causing me an issue on KVM/QEMU Libvirt virt-manager preventing the mouse hover at the top of the Guest VM's output window from showing the exit full-screen mode buttons.
 
 Hence I now have my own simplified dotfiles, which is all I need. It's not about aesthetics.
