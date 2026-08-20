@@ -1,11 +1,11 @@
 # my-hyprland-setup
 
 These are my personal hyprland dotfiles that I use on a Debian 13 system built from butterknife 0.3.0.
-[https://justaguy.dev/]()
+https://justaguy.dev/
 
 The hyperland is built from source using the latest hyperland  (v0.56.2 when I started) which I created by following the instructions on:
 
-[https://github.com/LinuxBeginnings/Debian-Hyprland]()
+https://github.com/LinuxBeginnings/Debian-Hyprland
 
 I just installed the minimum without dotfiles and then used this repo's dotfiles. 
 
