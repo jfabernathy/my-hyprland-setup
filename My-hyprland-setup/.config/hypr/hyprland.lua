@@ -55,6 +55,8 @@ hl.on("hyprland.start", function ()
    hl.exec_cmd("/usr/libexec/hyprpolkitagent")
    hl.exec_cmd("hypridle")
    hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 30")
+   hl.exec_cmd("wl-paste --type text --watch cliphist store")
+   hl.exec_cmd("wl-paste --type image --watch cliphist store")
  end)
 
 -------------------------------
@@ -278,6 +280,8 @@ hl.bind(secondMod .. " + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("gnome-calculator"))
+
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"))
 
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(launcher))
 hl.bind(secondMod .. " + SPACE", hl.dsp.exec_cmd(runner))
