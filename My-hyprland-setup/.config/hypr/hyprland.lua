@@ -247,7 +247,11 @@ hl.config({
         sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
 
         touchpad = {
-            natural_scroll = false,
+            natural_scroll = true,
+            tap_to_click = false,
+            clickfinger_behavior = true,
+            disable_while_typing = true,
+            scroll_factor = 1.0,
         },
     },
 })
@@ -337,6 +341,10 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
+-- Increase keyboard brightness by 10% Set for macbookpro81
+hl.bind("XF86KbdBrightnessUp", hl.dsp.exec_cmd("brightnessctl --device=smc::kbd_backlight set +10%"))
+-- Decrease keyboard brightness by 10%
+hl.bind("XF86KbdBrightnessDown", hl.dsp.exec_cmd("brightnessctl --device=smc::kbd_backlight set 10%-"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
